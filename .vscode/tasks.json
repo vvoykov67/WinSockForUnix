@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C++",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Task to compile the active C++ file"
+        },
+        {
+            "label": "Build Unix Winsock",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g", // Include debug symbols
+                "-o",
+                "${workspaceFolder}/unix_winsock",
+                "${workspaceFolder}/WinSockForUnix.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compile WinSockForUnix.c to unix_winsock with debug symbols"
+        }
+    ]
+}
